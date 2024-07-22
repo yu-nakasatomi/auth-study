@@ -2,12 +2,21 @@ import { useAuth } from "../auth/AuthProvider.tsx";
 
 const TopPage = () => {
   const { isAuthenticated, isLoading } = useAuth();
-  console.log("Top page", isAuthenticated, isLoading);
   return (
     <>
-    <h1>Topページ</h1>
-      <div>auth{isAuthenticated ? <p>true</p> : <p>false</p>}</div>
-      <div>load{isLoading ? <p>true</p> : <p>false</p>}</div>
+      <h1>Topページ</h1>
+      <table border="1">
+        <tbody>
+        <tr>
+          <td>Loading</td>
+          {isLoading ? <td>true</td> : <td>false</td>}
+        </tr>
+        <tr>
+          <td>Authenticated</td>
+          {isAuthenticated ? <td>true</td> : <td>false</td>}
+        </tr>
+        </tbody>
+      </table>
     </>
   )
 }

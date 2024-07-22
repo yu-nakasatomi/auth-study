@@ -2,18 +2,18 @@ export const authConfig = {
   Auth: {
     Cognito: {
       //ユーザープールID
-      userPoolId: String("ap-northeast-1_9w660B4v6"),
+      userPoolId: import.meta.env.VITE_COGNITO_USER_POOL_ID,
       // クライアントID
-      userPoolClientId: String("cdo6q8s427opcjpbrcgell3t0"),
+      userPoolClientId: import.meta.env.VITE_COGNITO_USER_POOL_CLIENT_ID,
       loginWith: {
         oauth: {
           // Cognitoドメイン(XXXX => 作成したドメイン名を挿入)
-          domain: "testuserpool4.auth.ap-northeast-1.amazoncognito.com",
+          domain: import.meta.env.VITE_COGNITO_DOMAIN,
           scopes: ["openid", "email", "profile"],
           //ログイン後、リダイレクトするurl
-          redirectSignIn: ["http://localhost:5173/login/home"],
+          redirectSignIn: ["http://localhost:5173/"],
           //ログアウト後、リダイレクトするurl
-          redirectSignOut: ["http://localhost:5173/login"],
+          redirectSignOut: ["http://localhost:5173/"],
           responseType: "code",
           // providers: ["Google", { custom: "Line" }], //後述(ソーシャルログイン)
         }

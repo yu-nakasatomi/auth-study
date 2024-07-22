@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import { Amplify } from 'aws-amplify'
 import { cognitoUserPoolsTokenProvider } from "aws-amplify/auth/cognito";
 import { sessionStorage } from "aws-amplify/utils";
@@ -15,10 +14,6 @@ import RegisterPage from "./pages/RegisterPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import AuthProvider from "./auth/AuthProvider.tsx";
-
-
-
-import App from "./pages/App.tsx";
 
 Amplify.configure(authConfig);
 cognitoUserPoolsTokenProvider.setKeyValueStorage(sessionStorage);
@@ -35,7 +30,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/sign-up" element={<SignUpPage />}></Route>
           <Route path="/confirm" element={<ConfirmPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
-          <Route path="/app" element={<App />}></Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

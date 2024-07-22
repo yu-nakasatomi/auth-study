@@ -13,7 +13,7 @@ const ConfirmPage:FC = () => {
   const [username, setUsername] = useState<string>("");
   const navigate = useNavigate();
   const location = useLocation();
-  const { handleConfirmation } = useAuth();
+  const { handleConfirm } = useAuth();
 
   useEffect(() => {
     if (!location.state) navigate('/');
@@ -25,7 +25,7 @@ const ConfirmPage:FC = () => {
       confirmationCode: data.code,
       username: username
     }
-    const result = await handleConfirmation(confirmInput);
+    const result = await handleConfirm(confirmInput);
     if (result.success) {
       alert("確認完了しました");
       navigate('/');

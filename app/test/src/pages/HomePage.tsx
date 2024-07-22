@@ -5,6 +5,7 @@ const HomePage = () => {
     <>
       <PrivateRoute>
         <h1>ホームページ</h1>
+        <p>ログインしているユーザーのみ表示されるページです</p>
       </PrivateRoute>
     </>
   )
