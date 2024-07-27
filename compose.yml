@@ -1,0 +1,13 @@
+services:
+  app:
+    image: node:20.15.1-slim
+    container_name: app
+    platform: linux/arm64
+    tty: true
+    volumes:
+      - ./app:/usr/app
+    working_dir: /usr/app/
+    networks:
+      - default
+    ports:
+      - 5173:5173
