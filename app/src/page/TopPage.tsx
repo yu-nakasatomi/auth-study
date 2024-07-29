@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/merumeru_logo_1.png";
+import Logo from "../assets/merumeru_logo.svg";
 
 function TopPage() {
   return (
